@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "MyIcons";
+    src: url("./MyIcons.ttf?ab84a653f9a5ebc26da7b3ef51403ea5") format("truetype");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: MyIcons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-notifications_outlined_24:before {
+    content: "\f101";
+}
+.icon-notifications_outlined_20:before {
+    content: "\f102";
+}
+.icon-notifications_outlined_16:before {
+    content: "\f103";
+}
+.icon-notifications_filled_24:before {
+    content: "\f104";
+}
+.icon-notifications_filled_20:before {
+    content: "\f105";
+}
+.icon-notifications_filled_16:before {
+    content: "\f106";
+}
+.icon-alert_outlined_24:before {
+    content: "\f107";
+}
+.icon-alert_outlined_20:before {
+    content: "\f108";
+}
+.icon-alert_outlined_16:before {
+    content: "\f109";
+}
+.icon-alert_filled_24:before {
+    content: "\f10a";
+}
+.icon-alert_filled_20:before {
+    content: "\f10b";
+}
+.icon-alert_filled_16:before {
+    content: "\f10c";
+}
