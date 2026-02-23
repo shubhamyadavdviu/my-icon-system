@@ -1,0 +1,17 @@
+name: Generate Font
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install -g fantasticon
+      - run: fantasticon icons/ -o generated/ -t ttf --name MyIcons
+      - name: Commit
+        run: |
+          git config --global user.name "Robot"
+          git config --global user.email "bot@example.com"
+          git add .
+          git commit -m "Robot: Rebuilt Font" || exit 0
+          git push
