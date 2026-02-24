@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MyIcons";
-    src: url("./MyIcons.ttf?b4c679c8c98bd6f696a1671c91ae724f") format("truetype");
+    src: url("./MyIcons.ttf?58327c8280be96f435dbb8561b8c5f90") format("truetype");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -14,9 +14,15 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-club_outlined:before {
+.icon-notifications_outlined:before {
     content: "\f101";
 }
-.icon-club_filled:before {
+.icon-notifications_filled:before {
     content: "\f102";
+}
+.icon-club_outlined:before {
+    content: "\f103";
+}
+.icon-club_filled:before {
+    content: "\f104";
 }
