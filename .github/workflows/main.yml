@@ -6,7 +6,6 @@ on:
       - 'icons/**'
       - 'CHANGELOG.md'
 
-# THE TRAFFIC COP: Cancels backup robots if a new file is uploaded while it's running
 concurrency:
   group: icon-generation
   cancel-in-progress: true
@@ -21,7 +20,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Tells the robot to download the full history so 'git pull' works perfectly
+          fetch-depth: 0
+          ref: main # Explicitly tells the robot to work on the 'main' branch
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,24 +31,37 @@ jobs:
       - name: Install Icon Tool
         run: npm install -g fantasticon
 
-      - name: Generate Icon Font and CSS
+      - name: Generate Icon Font
         run: |
           mkdir -p generated
           fantasticon icons/ -o generated/ -t ttf --name MyIcons
 
-      - name: Commit and Push Changes
+      - name: Commit and Push Changes (With Retry Loop)
         run: |
           git config --global user.name "Icon-Robot"
           git config --global user.email "robot@github.com"
 
-          # Pull the absolute latest changes from the master copy
-          git pull --rebase origin main
+          # Stage the generated folder
+          git add generated/
 
-          # Check for changes and save
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "Robot: Automatically updated font and assets [skip ci]"
-            git push origin main
-          else
-            echo "No changes detected, skipping commit."
+          # If there are no changes to the font, stop here and succeed
+          if git diff --staged --quiet; then
+            echo "No changes to commit. Font is up to date."
+            exit 0
           fi
+
+          # Commit the changes locally
+          git commit -m "Robot: Automatically updated font and assets [skip ci]"
+
+          # The "Retry Loop": Try to push. If it fails, pull newest files, wait 5s, try again.
+          n=0
+          until [ "$n" -ge 5 ]
+          do
+             # Pull latest changes and push
+             git pull --rebase origin main && git push origin main && break
+
+             # If it fails, increase the counter and wait
+             n=$((n+1))
+             echo "Push rejected because new icons arrived. Retrying in 5 seconds... (Attempt $n/5)"
+             sleep 5
+          done
