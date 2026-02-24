@@ -1,5 +1,9 @@
 # Changelog
 
+## [7.0.0] - 24/02/2026
+- thala for a reason
+
+
 ## [6.0.1] - 24/02/2026
 - just checking if each icon update is still failing or not?
 
