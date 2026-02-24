@@ -3,19 +3,25 @@ name: Icon System Robot
 on:
   push:
     paths:
-      - 'icons/**' # Triggers when you push new SVGs from Figma
-      - 'CHANGELOG.md' # Triggers when your plugin updates the log
+      - 'icons/**'
+      - 'CHANGELOG.md'
+
+# THE TRAFFIC COP: Cancels backup robots if a new file is uploaded while it's running
+concurrency:
+  group: icon-generation
+  cancel-in-progress: true
 
 jobs:
   generate-assets:
     runs-on: ubuntu-latest
-    # This gives the robot permission to "Write" new files back to your repo
     permissions:
       contents: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Tells the robot to download the full history so 'git pull' works perfectly
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,11 +33,7 @@ jobs:
 
       - name: Generate Icon Font and CSS
         run: |
-          # 1. Ensure the generated folder exists
           mkdir -p generated
-
-          # 2. Convert SVGs to Font (.ttf)
-          # We use --name MyIcons to match your Flutter code
           fantasticon icons/ -o generated/ -t ttf --name MyIcons
 
       - name: Commit and Push Changes
@@ -39,10 +41,10 @@ jobs:
           git config --global user.name "Icon-Robot"
           git config --global user.email "robot@github.com"
 
-          # 1. Pull latest changes (Changelog) to avoid "rejected" error
+          # Pull the absolute latest changes from the master copy
           git pull --rebase origin main
 
-          # 2. Check for changes and push
+          # Check for changes and save
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Robot: Automatically updated font and assets [skip ci]"
