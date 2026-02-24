@@ -1,22 +1,4 @@
 {
-    "notifications_outlined_24": 61697,
-    "notifications_outlined_20": 61698,
-    "notifications_outlined_16": 61699,
-    "notifications_filled_24": 61700,
-    "notifications_filled_20": 61701,
-    "notifications_filled_16": 61702,
-    "club_outlined": 61703,
-    "club_filled": 61704,
-    "chart_outlined_24": 61705,
-    "chart_outlined_20": 61706,
-    "chart_outlined_16": 61707,
-    "chart_filled_24": 61708,
-    "chart_filled_20": 61709,
-    "chart_filled_16": 61710,
-    "alert_outlined_24": 61711,
-    "alert_outlined_20": 61712,
-    "alert_outlined_16": 61713,
-    "alert_filled_24": 61714,
-    "alert_filled_20": 61715,
-    "alert_filled_16": 61716
+    "club_outlined": 61697,
+    "club_filled": 61698
 }
