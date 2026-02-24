@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.0] - 24/02/2026
+- ab to chal ja yaar
+
+
 ## [2.0.0] - 24/02/2026
 - rene rebirth
 
