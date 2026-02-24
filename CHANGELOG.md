@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.0] - 24/02/2026
+- ek nayi shuruat
+
+
 ## [4.0.2] - 24/02/2026
 - ab maza aayega 
 
