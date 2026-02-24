@@ -1,5 +1,5 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8 2H6C4.89543 2 4 2.89543 4 4V16C4 17.1046 4.89543 18 6 18H8C9.10457 18 10 17.1046 10 16V4C10 2.89543 9.10457 2 8 2Z" fill="black" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18 9H16C14.8954 9 14 9.89543 14 11V16C14 17.1046 14.8954 18 16 18H18C19.1046 18 20 17.1046 20 16V11C20 9.89543 19.1046 9 18 9Z" fill="black" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M22 22H2" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 21.25C22.4142 21.25 22.75 21.5858 22.75 22C22.75 22.4142 22.4142 22.75 22 22.75H2C1.58579 22.75 1.25 22.4142 1.25 22C1.25 21.5858 1.58579 21.25 2 21.25H22Z" fill="black"/>
+<path d="M8 1.25C9.51878 1.25 10.75 2.48122 10.75 4V16C10.75 17.5188 9.51878 18.75 8 18.75H6C4.48122 18.75 3.25 17.5188 3.25 16V4C3.25 2.48122 4.48122 1.25 6 1.25H8Z" fill="black"/>
+<path d="M18 8.25C19.5188 8.25 20.75 9.48122 20.75 11V16C20.75 17.5188 19.5188 18.75 18 18.75H16C14.4812 18.75 13.25 17.5188 13.25 16V11C13.25 9.48122 14.4812 8.25 16 8.25H18Z" fill="black"/>
 </svg>
