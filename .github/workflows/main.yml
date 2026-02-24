@@ -39,11 +39,14 @@ jobs:
           git config --global user.name "Icon-Robot"
           git config --global user.email "robot@github.com"
 
-          # Check if there are actually changes to commit
+          # 1. Pull latest changes (Changelog) to avoid "rejected" error
+          git pull --rebase origin main
+
+          # 2. Check for changes and push
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Robot: Automatically updated font and assets [skip ci]"
-            git push
+            git push origin main
           else
             echo "No changes detected, skipping commit."
           fi
