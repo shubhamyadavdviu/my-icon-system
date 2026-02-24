@@ -5,10 +5,16 @@
     "notifications_filled_24": 61700,
     "notifications_filled_20": 61701,
     "notifications_filled_16": 61702,
-    "alert_outlined_24": 61703,
-    "alert_outlined_20": 61704,
-    "alert_outlined_16": 61705,
-    "alert_filled_24": 61706,
-    "alert_filled_20": 61707,
-    "alert_filled_16": 61708
+    "chart_outlined_24": 61703,
+    "chart_outlined_20": 61704,
+    "chart_outlined_16": 61705,
+    "chart_filled_24": 61706,
+    "chart_filled_20": 61707,
+    "chart_filled_16": 61708,
+    "alert_outlined_24": 61709,
+    "alert_outlined_20": 61710,
+    "alert_outlined_16": 61711,
+    "alert_filled_24": 61712,
+    "alert_filled_20": 61713,
+    "alert_filled_16": 61714
 }

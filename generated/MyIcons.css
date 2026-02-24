@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MyIcons";
-    src: url("./MyIcons.ttf?2b514dc53b7fa1377ba74abc067743b7") format("truetype");
+    src: url("./MyIcons.ttf?67525fae1550bb114b2613b831a583c3") format("truetype");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -32,21 +32,39 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .icon-notifications_filled_16:before {
     content: "\f106";
 }
-.icon-alert_outlined_24:before {
+.icon-chart_outlined_24:before {
     content: "\f107";
 }
-.icon-alert_outlined_20:before {
+.icon-chart_outlined_20:before {
     content: "\f108";
 }
-.icon-alert_outlined_16:before {
+.icon-chart_outlined_16:before {
     content: "\f109";
 }
-.icon-alert_filled_24:before {
+.icon-chart_filled_24:before {
     content: "\f10a";
 }
-.icon-alert_filled_20:before {
+.icon-chart_filled_20:before {
     content: "\f10b";
 }
-.icon-alert_filled_16:before {
+.icon-chart_filled_16:before {
     content: "\f10c";
+}
+.icon-alert_outlined_24:before {
+    content: "\f10d";
+}
+.icon-alert_outlined_20:before {
+    content: "\f10e";
+}
+.icon-alert_outlined_16:before {
+    content: "\f10f";
+}
+.icon-alert_filled_24:before {
+    content: "\f110";
+}
+.icon-alert_filled_20:before {
+    content: "\f111";
+}
+.icon-alert_filled_16:before {
+    content: "\f112";
 }
