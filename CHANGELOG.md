@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 24/02/2026
+- changed style and refined for better usage
+
+
 ## [1.0.1] - 24/02/2026
 - testing new changes
 
