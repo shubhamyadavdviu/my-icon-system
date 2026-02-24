@@ -5,6 +5,8 @@ export type MyIconsId =
   | "notifications_filled_24"
   | "notifications_filled_20"
   | "notifications_filled_16"
+  | "club_outlined"
+  | "club_filled"
   | "chart_outlined_24"
   | "chart_outlined_20"
   | "chart_outlined_16"
@@ -25,6 +27,8 @@ export type MyIconsKey =
   | "NotificationsFilled24"
   | "NotificationsFilled20"
   | "NotificationsFilled16"
+  | "ClubOutlined"
+  | "ClubFilled"
   | "ChartOutlined24"
   | "ChartOutlined20"
   | "ChartOutlined16"
@@ -45,6 +49,8 @@ export enum MyIcons {
   NotificationsFilled24 = "notifications_filled_24",
   NotificationsFilled20 = "notifications_filled_20",
   NotificationsFilled16 = "notifications_filled_16",
+  ClubOutlined = "club_outlined",
+  ClubFilled = "club_filled",
   ChartOutlined24 = "chart_outlined_24",
   ChartOutlined20 = "chart_outlined_20",
   ChartOutlined16 = "chart_outlined_16",
@@ -66,16 +72,18 @@ export const MY_ICONS_CODEPOINTS: { [key in MyIcons]: string } = {
   [MyIcons.NotificationsFilled24]: "61700",
   [MyIcons.NotificationsFilled20]: "61701",
   [MyIcons.NotificationsFilled16]: "61702",
-  [MyIcons.ChartOutlined24]: "61703",
-  [MyIcons.ChartOutlined20]: "61704",
-  [MyIcons.ChartOutlined16]: "61705",
-  [MyIcons.ChartFilled24]: "61706",
-  [MyIcons.ChartFilled20]: "61707",
-  [MyIcons.ChartFilled16]: "61708",
-  [MyIcons.AlertOutlined24]: "61709",
-  [MyIcons.AlertOutlined20]: "61710",
-  [MyIcons.AlertOutlined16]: "61711",
-  [MyIcons.AlertFilled24]: "61712",
-  [MyIcons.AlertFilled20]: "61713",
-  [MyIcons.AlertFilled16]: "61714",
+  [MyIcons.ClubOutlined]: "61703",
+  [MyIcons.ClubFilled]: "61704",
+  [MyIcons.ChartOutlined24]: "61705",
+  [MyIcons.ChartOutlined20]: "61706",
+  [MyIcons.ChartOutlined16]: "61707",
+  [MyIcons.ChartFilled24]: "61708",
+  [MyIcons.ChartFilled20]: "61709",
+  [MyIcons.ChartFilled16]: "61710",
+  [MyIcons.AlertOutlined24]: "61711",
+  [MyIcons.AlertOutlined20]: "61712",
+  [MyIcons.AlertOutlined16]: "61713",
+  [MyIcons.AlertFilled24]: "61714",
+  [MyIcons.AlertFilled20]: "61715",
+  [MyIcons.AlertFilled16]: "61716",
 };
