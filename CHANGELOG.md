@@ -1,5 +1,9 @@
 # Changelog
 
+## [7.0.1] - 24/02/2026
+- added cloud icons
+
+
 ## [7.0.0] - 24/02/2026
 - thala for a reason
 
