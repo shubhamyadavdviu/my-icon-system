@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.0] - 24/02/2026
+- rene rebirth
+
+
 ## [1.1.1] - 24/02/2026
 - changed style and refined for better usage
 
