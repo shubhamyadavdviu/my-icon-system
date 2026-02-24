@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.0.0] - 24/02/2026
+- club icon
+
+
 ## [5.0.0] - 24/02/2026
 - ek nayi shuruat
 
