@@ -34,19 +34,29 @@ jobs:
       - name: Generate Font and JSON Mapping
         run: |
           mkdir -p generated
-          # -t is for fonts (ttf), -a is for assets (json)
-          fantasticon icons/ -o generated/ -t ttf -a json --name MyIcons
+
+          # 1. Create a strict configuration file to avoid CLI flag errors
+          cat << 'EOF' > .fantasticonrc.json
+          {
+            "inputDir": "./icons",
+            "outputDir": "./generated",
+            "fontTypes": ["ttf"],
+            "assetTypes": ["json"],
+            "name": "MyIcons"
+          }
+          EOF
+
+          # 2. Run the tool and tell it to read our config file
+          fantasticon -c .fantasticonrc.json
 
       - name: Generate Dart Code
         run: |
-          # This creates a tiny script that writes the Dart file for the devs
+          # This script reads the JSON map and writes the Dart file for the devs
           cat << 'EOF' > generate_dart.js
           const fs = require('fs');
 
-          // Read the JSON Fantasticon just made
           const mapping = JSON.parse(fs.readFileSync('generated/MyIcons.json', 'utf8'));
 
-          // Start writing the Dart file
           let dartCode = `// GENERATED CODE - DO NOT MODIFY BY HAND
           import 'package:flutter/widgets.dart';
 
@@ -58,7 +68,6 @@ jobs:
 
           `;
 
-          // Loop through every icon and create a Dart variable
           for (const [name, code] of Object.entries(mapping)) {
             const hex = code.toString(16);
             dartCode += `  static const IconData ${name} = IconData(0x${hex}, fontFamily: _fontFamily, fontPackage: _fontPackage);\n`;
@@ -66,12 +75,10 @@ jobs:
 
           dartCode += "}\n";
 
-          // Save it in the lib folder where Flutter expects it
           fs.mkdirSync('lib', { recursive: true });
           fs.writeFileSync('lib/my_icons.dart', dartCode);
           EOF
 
-          # Run the script we just created
           node generate_dart.js
 
       - name: Commit and Push Changes (With Retry Loop)
