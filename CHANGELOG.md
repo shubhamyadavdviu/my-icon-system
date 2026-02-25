@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.0.0] - 25/02/2026
+- restart
+
+
 ## [7.0.1] - 24/02/2026
 - added cloud icons
 
