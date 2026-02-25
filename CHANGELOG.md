@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.0.0] - 25/02/2026
+- final patch... hopefully
+
+
 ## [8.0.0] - 25/02/2026
 - restart
 
