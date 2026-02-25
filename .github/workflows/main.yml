@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: main # Explicitly tells the robot to work on the 'main' branch
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,37 +31,69 @@ jobs:
       - name: Install Icon Tool
         run: npm install -g fantasticon
 
-      - name: Generate Icon Font
+      - name: Generate Font and JSON Mapping
         run: |
           mkdir -p generated
-          fantasticon icons/ -o generated/ -t ttf --name MyIcons
+          # Notice we added 'json' to the -t (types) list
+          fantasticon icons/ -o generated/ -t ttf json --name MyIcons
+
+      - name: Generate Dart Code
+        run: |
+          # This creates a tiny script that writes the Dart file for the devs
+          cat << 'EOF' > generate_dart.js
+          const fs = require('fs');
+
+          // Read the JSON Fantasticon just made
+          const mapping = JSON.parse(fs.readFileSync('generated/MyIcons.json', 'utf8'));
+
+          // Start writing the Dart file
+          let dartCode = `// GENERATED CODE - DO NOT MODIFY BY HAND
+          import 'package:flutter/widgets.dart';
+
+          class MyIcons {
+            MyIcons._();
+
+            static const String _fontFamily = 'MyIcons';
+            static const String _fontPackage = 'my_design_system_icons';
+
+          `;
+
+          // Loop through every icon and create a Dart variable
+          for (const [name, code] of Object.entries(mapping)) {
+            const hex = code.toString(16);
+            dartCode += `  static const IconData ${name} = IconData(0x${hex}, fontFamily: _fontFamily, fontPackage: _fontPackage);\n`;
+          }
+
+          dartCode += "}\n";
+
+          // Save it in the lib folder where Flutter expects it
+          fs.mkdirSync('lib', { recursive: true });
+          fs.writeFileSync('lib/my_icons.dart', dartCode);
+          EOF
+
+          # Run the script we just created
+          node generate_dart.js
 
       - name: Commit and Push Changes (With Retry Loop)
         run: |
           git config --global user.name "Icon-Robot"
           git config --global user.email "robot@github.com"
 
-          # Stage the generated folder
-          git add generated/
+          # Stage the new font, JSON, and Dart file
+          git add generated/ lib/
 
-          # If there are no changes to the font, stop here and succeed
           if git diff --staged --quiet; then
-            echo "No changes to commit. Font is up to date."
+            echo "No changes to commit."
             exit 0
           fi
 
-          # Commit the changes locally
-          git commit -m "Robot: Automatically updated font and assets [skip ci]"
+          git commit -m "Robot: Automatically generated font and Dart classes [skip ci]"
 
-          # The "Retry Loop": Try to push. If it fails, pull newest files, wait 5s, try again.
           n=0
           until [ "$n" -ge 5 ]
           do
-             # Pull latest changes and push
              git pull --rebase origin main && git push origin main && break
-
-             # If it fails, increase the counter and wait
              n=$((n+1))
-             echo "Push rejected because new icons arrived. Retrying in 5 seconds... (Attempt $n/5)"
+             echo "Push rejected. Retrying in 5 seconds... (Attempt $n/5)"
              sleep 5
           done
