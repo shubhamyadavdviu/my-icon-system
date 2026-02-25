@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.0] - 25/02/2026
+- yaml update ki thi
+
+
 ## [9.0.0] - 25/02/2026
 - final patch... hopefully
 
