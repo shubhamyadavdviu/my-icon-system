@@ -34,8 +34,8 @@ jobs:
       - name: Generate Font and JSON Mapping
         run: |
           mkdir -p generated
-          # Notice we added 'json' to the -t (types) list
-          fantasticon icons/ -o generated/ -t ttf json --name MyIcons
+          # -t is for fonts (ttf), -a is for assets (json)
+          fantasticon icons/ -o generated/ -t ttf -a json --name MyIcons
 
       - name: Generate Dart Code
         run: |
