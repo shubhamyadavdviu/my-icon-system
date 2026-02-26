@@ -1,5 +1,10 @@
 # Changelog
 
+## [12.0.0] - 26/02/2026
+- adding percent icon and testing react and flutter font generation
+
+
+
 ## [11.0.0] - 26/02/2026
 - testing react packages along with flutter
 
