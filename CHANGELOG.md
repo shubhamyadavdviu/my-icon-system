@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 26/02/2026
+- versioning checking
+
+
 ## [13.0.0] - 26/02/2026
 - testing circle
 
