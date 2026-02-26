@@ -1,7 +1,7 @@
 @font-face {
     font-family: "MyIcons";
-    src: url("./MyIcons.ttf?0c2f0cfaad675391170a1e1d8f549f42") format("truetype"),
-url("./MyIcons.woff2?0c2f0cfaad675391170a1e1d8f549f42") format("woff2");
+    src: url("./MyIcons.ttf?da4245f18c9a7fc83341478d2fc89768") format("truetype"),
+url("./MyIcons.woff2?da4245f18c9a7fc83341478d2fc89768") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -38,4 +38,10 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 }
 .icon-cloud_filled:before {
     content: "\f108";
+}
+.icon-circle_outlined:before {
+    content: "\f109";
+}
+.icon-circle_filled:before {
+    content: "\f10a";
 }

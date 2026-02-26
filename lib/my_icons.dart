@@ -15,4 +15,6 @@ class MyIcons {
   static const IconData club_filled = IconData(0xf106, fontFamily: _fontFamily, fontPackage: _fontPackage);
   static const IconData cloud_outlined = IconData(0xf107, fontFamily: _fontFamily, fontPackage: _fontPackage);
   static const IconData cloud_filled = IconData(0xf108, fontFamily: _fontFamily, fontPackage: _fontPackage);
+  static const IconData circle_outlined = IconData(0xf109, fontFamily: _fontFamily, fontPackage: _fontPackage);
+  static const IconData circle_filled = IconData(0xf10a, fontFamily: _fontFamily, fontPackage: _fontPackage);
 }
