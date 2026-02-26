@@ -1,7 +1,7 @@
 @font-face {
     font-family: "MyIcons";
-    src: url("./MyIcons.ttf?8712f262ba5ee48c6571364dfb51fd5b") format("truetype"),
-url("./MyIcons.woff2?8712f262ba5ee48c6571364dfb51fd5b") format("woff2");
+    src: url("./MyIcons.ttf?0c2f0cfaad675391170a1e1d8f549f42") format("truetype"),
+url("./MyIcons.woff2?0c2f0cfaad675391170a1e1d8f549f42") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -15,21 +15,27 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-notifications_outlined:before {
+.icon-percent_outlined:before {
     content: "\f101";
 }
-.icon-notifications_filled:before {
+.icon-percent_filled:before {
     content: "\f102";
 }
-.icon-club_outlined:before {
+.icon-notifications_outlined:before {
     content: "\f103";
 }
-.icon-club_filled:before {
+.icon-notifications_filled:before {
     content: "\f104";
 }
-.icon-cloud_outlined:before {
+.icon-club_outlined:before {
     content: "\f105";
 }
-.icon-cloud_filled:before {
+.icon-club_filled:before {
     content: "\f106";
+}
+.icon-cloud_outlined:before {
+    content: "\f107";
+}
+.icon-cloud_filled:before {
+    content: "\f108";
 }
