@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.0.0] - 26/02/2026
+- testing react packages along with flutter
+
+
 ## [10.0.0] - 25/02/2026
 - yaml update ki thi
 
