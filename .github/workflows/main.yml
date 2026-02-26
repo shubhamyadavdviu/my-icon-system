@@ -35,14 +35,15 @@ jobs:
         run: |
           mkdir -p generated
 
-          # 1. Create a strict configuration file to avoid CLI flag errors
+          # 1. Create a strict configuration file
           cat << 'EOF' > .fantasticonrc.json
           {
             "inputDir": "./icons",
             "outputDir": "./generated",
-            "fontTypes": ["ttf"],
-            "assetTypes": ["json"],
-            "name": "MyIcons"
+            "fontTypes": ["ttf", "woff2"],
+            "assetTypes": ["json", "css"],
+            "name": "MyIcons",
+            "prefix": "icon"
           }
           EOF
 
