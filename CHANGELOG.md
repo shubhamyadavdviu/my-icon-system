@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 02/03/2026
+- qwertyuiop
+
+
 ## [1.1.1] - 26/02/2026
 - versioning checking
 
